@@ -1,0 +1,27 @@
+# make all patterns case-sensitive
+
+#https://stanfordnlp.github.io/CoreNLP/tokensregex.html how to conigure rules
+#
+
+ENV.defaultStringMatchFlags = 0
+ENV.defaultStringPatternFlags = 0
+
+# these Java classes will be used by the rules
+ner = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation" }
+tokens = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$TokensAnnotation" }
+
+
+$APPNAME= "/(APP1|APP2|APP3)/"
+$STATUS ="/(STATUS|HEALTH)/"
+$OWNER ="/(OWENR|PROJECT MANAGER|PROGAM MANAGER|MANAGER)/"
+
+# tokens match phase
+{ ruleType: "tokens", pattern: ([{word:$APPNAME}]), action: (Annotate($0, ner, "APP_NAME"),Annotate($0, normalized, $0.value)), result: "APP_NAME" }
+
+{ ruleType: "tokens", pattern: ([{word:$OWNER}] [{word:/OF THE|FOR THE |OF |FOR/}] [{word:$APPNAME}]), action: (Annotate($0, ner, "APP_OWNER"),Annotate($0, normalized, $0.value)), result: "APP_OWENR" }
+
+
+{ ruleType: "tokens", pattern: ([{word:$STATUS}] [{word:/OF THE|FOR| OF/}] [{word:$APPNAME}]), action: (Annotate($0, ner, "APP_STATUS"),Annotate($0, normalized, $0.value)), result: "APP_STATUS" }
+
+
+

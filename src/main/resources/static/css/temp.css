@@ -1,0 +1,59 @@
+#box {
+	width: 1000px;
+	height: 450px;
+	padding: 1em;
+	margin: auto;
+	margin-top: 30px;
+	background-color: #fff;
+	overflow: auto;
+	direction: left;
+	text-align: left;
+	border: 2px solid;
+	
+	
+}
+
+#userbot {
+	
+	border: 2px solid;
+	background-color: #f9ecec;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+	text-align: right;
+}
+
+#systembot {
+	border: 2px solid;
+	background-color: #f0f5f5;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+	text-align: left;	
+	
+}
+
+.btn {
+	
+	text-align: center;
+	border-radius: 10px;
+	
+}
+
+
+#messageid{
+	
+	width: 400px;
+	height: 30px;
+	align-content: right;
+	
+}
+
+#avatar2 {
+	
+	float: right;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	margin-right: 5px;
+}

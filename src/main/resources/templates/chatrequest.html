@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
+
+<head>
+	<title>Chat Bot</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	<link rel="stylesheet" th:href="@{/css/main.css}" href="../../css/main.css"></link>
+	<link rel="stylesheet" th:href="@{/css/temp.css}" href="../../css/temp.css"></link>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+</head>      
+<body>
+
+<div th:replace="fragement/header::header"></div>
+<br></br>
+
+<div id="box">
+
+<div id="systembot">
+<p>Welcome to Chat Bot, How can i help you!!!!!</p>
+
+</div>
+
+	
+</div>
+
+<div class="container" style="margin-top: 20px;margin-left: 200px;">
+<input name="messagetext" id="messageid" placeholder="Enter your message here ..." ></input>
+
+<button class="btn btn-primary" id="sendmessage" type="button">Send Message</button>
+
+
+
+</div>
+
+
+
+<!-- <p th:text="${uname}">
+</p> -->
+
+<br></br>
+<div th:replace="fragement/footer :: footer"></div>
+<br></br>
+<script type="text/javascript" th:src="@{/js/chat.js}" src="../../js/chat.js"></script>
+</body>
+      
+</html>

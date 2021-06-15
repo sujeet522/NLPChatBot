@@ -1,0 +1,21 @@
+# make all patterns case-sensitive
+ENV.defaultStringMatchFlags = 0
+ENV.defaultStringPatternFlags = 0
+
+# these Java classes will be used by the rules
+ner = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$NamedEntityTagAnnotation" }
+tokens = { type: "CLASS", value: "edu.stanford.nlp.ling.CoreAnnotations$TokensAnnotation" }
+
+
+$JOKES="/(JOKES|JOKE|LOUGH|PARODY)/"
+
+# tokens match phase
+{ ruleType: "tokens", pattern: ([{word:$JOKES}]), action: (Annotate($0, ner, "JOKES"),Annotate($0, normalized, $0.value)), result: "JOKES" }
+{ ruleType: "tokens", pattern: ([{word:/TELL|ME|SOME/}] [{word:$JOKES}]), action: (Annotate($0, ner, "JOKES"),Annotate($0, normalized, $0.value)), result: "JOKES" }
+{ ruleType: "tokens", pattern: ([{word:MAKE}] [{word:/LAUGH|FUN/}] [{word:$JOKES}]), action: (Annotate($0, ner, "JOKES"),Annotate($0, normalized, $0.value)), result: "JOKES" }
+
+#Greet Users
+
+{ ruleType: "tokens", pattern: ([{word:"HOW"}] [{word:"ARE"}] [{word:"YOU"}]), action: (Annotate($0, ner, "GREET_USER"),Annotate($0, normalized, $0.value)), result: "GREET_USER" }
+{ ruleType: "tokens", pattern: ([{word:"HOW"}] [{word:"YOU"}] [{word:"DOING"}]), action: (Annotate($0, ner, "GREET_USER"),Annotate($0, normalized, $0.value)), result: "GREET_USER" }
+{ ruleType: "tokens", pattern: ([{word:"WHATS"}] [{word:"UP"}]), action: (Annotate($0, ner, "GREET_USER"),Annotate($0, normalized, $0.value)), result: "GREET_USER" }

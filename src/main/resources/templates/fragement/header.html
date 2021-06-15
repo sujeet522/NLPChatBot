@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
+
+<head>
+	<title>Chat Bot</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	<!-- <link rel="stylesheet" th:href="@{/css/main.css}" href="../../../css/main.css"></link> -->
+</head>      
+<body>
+
+<div class="navbar" th:fragement="header">
+
+<div class="container">
+<header>
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <!--  <a class="navbar-brand" href="#">WebSiteName</a> -->
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#home"><span class="glyphicon glyphicon-home"></span>ChatBot</a></li>
+      
+    </ul>
+    <ul  class="nav navbar-nav navbar-right">
+      	
+      <li style="float: right" th:if="${!#authorization.expression('isAuthenticated()')}">
+      <a th:href="@{/login}" style="float: right; display: block; color: #f2f2f2; text-align: center;padding: 14px 16px;text-decoration: none"> 
+  	<span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li style="float: right;" th:if="${#authorization.expression('isAuthenticated()')}">
+      <a th:href="@{/logout}" style="float: right; display: block; color: #f2f2f2; text-align: center;padding: 14px 16px;text-decoration: none"> 
+  	<span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+      </ul>
+  </div>
+</nav>
+	
+	<!-- <a href="#home"><span class="glyphicon glyphicon-home"></span> ChatBot</a>
+  	<a href="#login" style="float: left; display: block; color: #f2f2f2; text-align: center;padding: 14px 16px;text-decoration: none"> 
+  	<span class="glyphicon glyphicon-log-in"></span> Login</a>
+  	<a href="#logout" style="float: right; display: block; color: #f2f2f2; text-align: center;padding: 14px 16px;text-decoration: none"> 
+  	<span class="glyphicon glyphicon-log-out"></span>Logout</a> -->
+
+	
+</header>
+
+</div>
+
+<!-- <div class="navabr" th:fragement="header">
+
+<div class="container">
+	<a href="#home"><span class="glyphicon glyphicon-home"></span> ChatBot</a>
+  	<a href="#login" style="float: left; display: block; color: #f2f2f2; text-align: center;padding: 14px 16px;text-decoration: none"> <span class="glyphicon glyphicon-log-in"></span> Login</a>
+  	<a href="#logout" style="float: right; display: block; color: #f2f2f2; text-align: center;padding: 14px 16px;text-decoration: none"> <span class="glyphicon glyphicon-log-out"></span>Logout</a>
+
+</div>
+</div> -->
+</body>
+      
+</html>
