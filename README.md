@@ -1,19 +1,11 @@
 # ner-application
 Named Entity Recognizer (NER) with Spring Boot
 
-## Video Tutorial
+Custom rules configures using rec.rules and feed.rules file.
 
-https://www.youtube.com/watch?v=E6gcewlL6jU
 
-https://www.youtube.com/watch?v=yFpxihRf5M8&t=1s
+![image](https://user-images.githubusercontent.com/22033976/122026536-ed75ec80-cde7-11eb-8841-3c5c68cfeb1c.png)
 
-https://www.youtube.com/watch?v=83O0qOMCE6I
+Chat widow
 
-## Screen Shot (Extracting Person)
-
-![alt Screenshot_1](https://raw.githubusercontent.com/dineshkrishdev/ner-application/master/src/main/resources/screen-shots/screenshot_1.PNG)
-     
-## Screen Shot (Extracting Job Title)
-     
-![alt Screenshot_2](https://raw.githubusercontent.com/dineshkrishdev/ner-application/master/src/main/resources/screen-shots/screenshot_2.PNG)
-
+![image](https://user-images.githubusercontent.com/22033976/122026694-16967d00-cde8-11eb-8b2c-5446cdb3cfc7.png)
